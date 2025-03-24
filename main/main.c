@@ -51,7 +51,7 @@ void trigger_task(void *p) {
     while (1) {
         // Gera pulso de 10 µs
         gpio_put(TRIG_PIN, 1);
-        sleep_us(10);
+        vTaskDelay(pdMS_TO_TICKS(1000));
         gpio_put(TRIG_PIN, 0);
 
         // Sinaliza que o trigger foi disparado
